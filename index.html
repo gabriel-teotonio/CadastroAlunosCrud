@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script defer src="https://kit.fontawesome.com/d7a19c72cc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="popUp-alunoAdd">
+        <i class="fa-regular fa-circle-check"></i> <span>aluno adicionado</span>
+    </div>
+    <header>
+        <h2>Cadastro do Aluno </h2>
+    </header>
+
+
+    <main>
+        <button class="cadastrar" id="cadastrar">Cadastrar aluno <i class="fa-solid fa-plus"></i></button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Curso</th>
+                    <th>Data Início</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                
+            </tbody>
+        </table>
+
+        <div class="modal" id="modal">
+
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2>Novo Aluno</h2>
+                    <button class="modal-close" id="modalClose"><i class="fa-solid fa-circle-xmark"></i></button>
+                </header>
+                <form class="modal-form">
+                    <input required id="nome" data-index="new" type="text" class="modal-field" placeholder="Nome do aluno">
+                    <input required id="email" type="email" class="modal-field" placeholder="Email do aluno">
+                    <input required id="curso" type="text" class="modal-field" placeholder="Curso do aluno">
+                    <input required id="data" type="date" class="modal-field" placeholder="Data de início:12/06/2022" title="data de inicio">
+                </form>
+                <footer class="modal-footer">
+                    <button class="button save" id="save">Salvar</button>
+                    <button class="button cancel" id="cancel">Cancelar</button>
+                </footer>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>

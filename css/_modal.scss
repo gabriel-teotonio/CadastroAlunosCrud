@@ -1,0 +1,175 @@
+
+
+.modal{
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.199);
+    z-index: -1;
+    opacity: 0;
+}
+
+.modal.active{
+    opacity: 1;
+    z-index: 1;
+    
+    .modal-content{
+        animation: show .3s ease;
+    }
+}
+
+
+
+@keyframes show {
+    0%{
+        transform: scale(0.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.modal-content{
+    background-color: rgb(19, 74, 146);
+    width: 50vw;
+    margin: 15vh auto;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.144);
+
+
+    .modal-header{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        height: 40px;
+        width: 100%;
+        line-height: 40px;
+        font-size: 1rem;
+        background-color: transparent;
+
+        .modal-close{
+            position: absolute;
+            right: 0;
+            display: block;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            user-select: none;
+            cursor: pointer;
+            border: none;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            background-color: transparent;
+            color: rgb(107, 163, 226);
+            margin-right: 1rem;
+
+            &:hover{
+                color: rgb(209, 90, 130);
+                transition: .5s ease;
+            }
+        }
+    }
+
+    .modal-form{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 0 5px;
+        width: 90%;
+        margin: 1rem 0;
+
+        .modal-field{
+            width: calc(50% - 10px);
+            height: 38px;
+            outline-style: none;
+            border-style: none;
+            border-radius: 2px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.397);
+            padding: 0 10px;
+            font-size:1rem;
+            border: 1px solid rgba(191, 201, 206, 0.548);
+            background-color: transparent;
+            color: white;
+
+            &:focus{
+                border: 1px solid rgb(240, 240, 240);
+            }
+
+            &::placeholder{
+                color: rgb(83, 133, 180);
+            }
+        }
+    }
+
+    .modal-footer{
+        text-align: right;
+        padding: 0 20px;
+
+        .button{
+        height: 30px;
+        width: 100px;
+        margin: 2rem 8px;
+        border: none;
+        border-radius: 20px;
+        font-weight: 600;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        cursor: pointer;
+        }
+        .save{
+            background-color: rgb(22, 140, 236);
+            transition: .3s;
+
+            &:hover{
+                background-color: rgba(22, 140, 236, 0.795);
+            }
+        }
+        .cancel{
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.637);
+        }
+    }
+}
+
+
+//--Resposividade modal--//
+
+@media (max-width:475px){
+    .modal-content{
+        width: 100%;
+        height: auto;
+        margin: 0;
+
+        .modal-footer .button{
+            height: 50px;
+            width: 200px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+        }
+        .modal-form{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+
+            .modal-field{
+                width: 80%;
+                height: 50px;
+                padding-left: 2px;
+                font-size: .9rem;
+            }
+        }
+        .modal-footer{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
